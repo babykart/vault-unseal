@@ -1,0 +1,14 @@
+{{- if and .Values.serviceAccount.create (semverCompare ">=1.24-0" .Capabilities.KubeVersion.GitVersion) -}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ include "vault-unseal.serviceAccountName" . }}-token
+  labels:
+    {{- include "vault-unseal.labels" . | nindent 4 }}
+  annotations:
+    kubernetes.io/service-account.name: {{ include "vault-unseal.serviceAccountName" . }}
+    {{- with .Values.serviceAccount.annotations }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+type: kubernetes.io/service-account-token
+{{- end }}
