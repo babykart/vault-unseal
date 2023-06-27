@@ -3,6 +3,8 @@
 deployment:
   # -- Deployment annotations
   annotations: {}
+  # -- Deployment labels
+  labels: {}
   # -- Deployment replica count
   replicaCount: 1
   # -- Deployment revision history limit
