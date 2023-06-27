@@ -15,7 +15,7 @@ deployment:
 
 image:
   # -- Image registry
-  repository: ghcr.io
+  registry: ghcr.io
   # -- Image repository
   repository: lrstanley/vault-unseal
   # -- Image pull policy
