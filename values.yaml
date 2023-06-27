@@ -12,8 +12,10 @@ deployment:
     type: RollingUpdate
 
 image:
+  # -- Image registry
+  repository: ghcr.io
   # -- Image repository
-  repository: ghcr.io/lrstanley/vault-unseal
+  repository: lrstanley/vault-unseal
   # -- Image pull policy
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart appVersion.
