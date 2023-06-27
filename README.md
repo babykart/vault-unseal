@@ -1,6 +1,6 @@
 # vault-unseal
 
-![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
+![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
 
 A Helm chart for vault-unseal
 
@@ -12,7 +12,7 @@ A Helm chart for vault-unseal
 
 ## Source Code
 
-* <https://github.com/lrstanley/vault-unseal>
+* <https://github.com/lrstanley/vault-unseal.git>
 
 ## Values
 
@@ -24,6 +24,7 @@ A Helm chart for vault-unseal
 | configSecret.stringData | string | `"environment: dev\ncheck_interval: 15s\nmax_check_interval: 30m\nvault_nodes:\n  - https://1.2.3.4:8200\nunseal_tokens:\n  - your-token\n  - your-second-token\ntls_skip_verify: false\nemail:\n  enabled: false\n  hostname: smtp.hostname.com\n  port: 25\n  username: your-username\n  password: your-password\n  # address to send from.\n  from_addr: your-alerts@hostname.com\n  # addresses to send to. the first will be the TO, the second and on will be CC'd\n  # onto the message.\n  send_addrs:\n    - your-alert-group@hostname.com\n    - example-user@hostname.com\n  # Skip TLS certificate validation.\n  tls_skip_verify: false\n  # Require TLS for SMTP connections.\n  # The default is opportunistic.\n  mandatory_tls: false\nnotify_max_elapsed: 10m\nnotify_queue_delay: 60s\n"` | Config secret stringData |
 | containers.env | list | `[]` | Containers environement |
 | deployment.annotations | object | `{}` | Deployment annotations |
+| deployment.labels | object | `{}` | Deployment labels |
 | deployment.replicaCount | int | `1` | Deployment replica count |
 | deployment.revisionHistoryLimit | int | `1` | Deployment revision history limit |
 | deployment.strategy.type | string | `"RollingUpdate"` | Deployment strategy type |
@@ -31,7 +32,8 @@ A Helm chart for vault-unseal
 | extraVolumes | list | `[]` | Extra volumes |
 | fullnameOverride | string | `""` | Full name override |
 | image.pullPolicy | string | `"IfNotPresent"` | Image pull policy |
-| image.repository | string | `"ghcr.io/lrstanley/vault-unseal"` | Image repository |
+| image.registry | string | `"ghcr.io"` | Image registry |
+| image.repository | string | `"lrstanley/vault-unseal"` | Image repository |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
 | imagePullSecrets | list | `[]` | Image pull secrets |
 | nameOverride | string | `""` | Name override |
