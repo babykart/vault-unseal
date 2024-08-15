@@ -1,7 +1,7 @@
 # vault-unseal
 
-[![License](https://img.shields.io/badge/License-MIT-blue)](https://opensource.org/licenses/MIT)
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/vault-unseal)](https://artifacthub.io/packages/search?repo=vault-unseal)
+[![License](https://img.shields.io/badge/License-MIT-blue)](https://opensource.org/licenses/MIT)
 
 ## Usage
 
@@ -27,7 +27,7 @@ helm upgrade --install vault-unseal vault-unseal/vault-unseal
 Using an OCI-based registry:
 
 ```sh
-helm upgrade --install oci://ghcr.io/babykart/helm-charts/vault-unseal --version <version>
+helm upgrade --install vault-unseal oci://ghcr.io/babykart/helm-charts/vault-unseal --version <version>
  ```
 
 To uninstall the chart:
