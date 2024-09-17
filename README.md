@@ -27,7 +27,7 @@ helm upgrade --install vault-unseal vault-unseal/vault-unseal
 Using an OCI-based registry:
 
 ```sh
-helm upgrade --install vault-unseal oci://ghcr.io/babykart/helm-charts/vault-unseal --version <version>
+helm upgrade --install vault-unseal oci://ghcr.io/babykart/helm-charts/vault-unseal
  ```
 
 To uninstall the chart:
