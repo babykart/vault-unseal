@@ -1,6 +1,6 @@
 # vault-unseal
 
-![Version: 0.7.0](https://img.shields.io/badge/Version-0.7.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.6.0](https://img.shields.io/badge/AppVersion-0.6.0-informational?style=flat-square)
+![Version: 0.7.1](https://img.shields.io/badge/Version-0.7.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.6.0](https://img.shields.io/badge/AppVersion-0.6.0-informational?style=flat-square)
 
 A Helm chart for vault-unseal
 
@@ -13,6 +13,39 @@ A Helm chart for vault-unseal
 ## Source Code
 
 * <https://github.com/lrstanley/vault-unseal.git>
+
+## Usage
+
+[Helm](https://helm.sh) must be installed to use the charts. Please refer to
+Helm's [documentation](https://helm.sh/docs) to get started.
+
+Once Helm has been set up correctly, add the repo as follows:
+
+```sh
+helm repo add vault-unseal https://babykart.github.io/vault-unseal
+```
+
+If you had already added this repo earlier, run `helm repo update` to retrieve
+the latest versions of the packages. You can then run `helm search repo
+vault-unseal` to see the charts.
+
+To install the vault-unseal chart:
+
+```sh
+helm upgrade --install vault-unseal vault-unseal/vault-unseal
+```
+
+Using an OCI-based registry:
+
+```sh
+helm upgrade --install vault-unseal oci://ghcr.io/babykart/helm-charts/vault-unseal
+ ```
+
+To uninstall the chart:
+
+```sh
+helm delete vault-unseal
+```
 
 ## Values
 
