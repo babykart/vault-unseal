@@ -30,7 +30,7 @@ nameOverride: ""
 # -- Full name override
 fullnameOverride: ""
 
-configSecret:
+config:
   # -- If you want to manage the configuration out of the helm chart, specify the name of the secret
   existingSecret: ""
   # -- Config secret annotations

@@ -73,7 +73,7 @@ spec:
       volumes:
       - name: conf
         secret:
-          secretName: {{ if .Values.configSecret.existingSecret }}{{ .Values.configSecret.existingSecret }}{{ else }}{{ include "vault-unseal.fullname" . }}-conf{{ end }}
+          secretName: {{ if .Values.config.existingSecret }}{{ .Values.config.existingSecret }}{{ else }}{{ include "vault-unseal.fullname" . }}-conf{{ end }}
           defaultMode: 0400
       {{- with .Values.extraVolumes }}
       {{- toYaml . | nindent 6 }}
