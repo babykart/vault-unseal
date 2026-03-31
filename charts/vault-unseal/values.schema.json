@@ -1,0 +1,193 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "affinity": {
+            "description": "Affinity",
+            "type": "object"
+        },
+        "config": {
+            "type": "object",
+            "properties": {
+                "annotations": {
+                    "description": "Config secret annotations",
+                    "type": "object"
+                },
+                "existingSecret": {
+                    "description": "If you want to manage the configuration out of the helm chart, specify the name of the secret",
+                    "type": "string"
+                },
+                "stringData": {
+                    "description": "Config secret stringData",
+                    "type": "string"
+                }
+            }
+        },
+        "containers": {
+            "type": "object",
+            "properties": {
+                "env": {
+                    "description": "Containers environement",
+                    "type": "array"
+                }
+            }
+        },
+        "deployment": {
+            "type": "object",
+            "properties": {
+                "annotations": {
+                    "description": "Deployment annotations",
+                    "type": "object"
+                },
+                "labels": {
+                    "description": "Deployment labels",
+                    "type": "object"
+                },
+                "replicaCount": {
+                    "description": "Deployment replica count",
+                    "type": "integer"
+                },
+                "revisionHistoryLimit": {
+                    "description": "Deployment revision history limit",
+                    "type": "integer"
+                },
+                "strategy": {
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "description": "Deployment strategy type",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "extraVolumeMounts": {
+            "description": "Extra volume mounts",
+            "type": "array"
+        },
+        "extraVolumes": {
+            "description": "Extra volumes",
+            "type": "array"
+        },
+        "fullnameOverride": {
+            "description": "Full name override",
+            "type": "string"
+        },
+        "image": {
+            "type": "object",
+            "properties": {
+                "pullPolicy": {
+                    "description": "Image pull policy",
+                    "type": "string"
+                },
+                "registry": {
+                    "description": "Image registry",
+                    "type": "string"
+                },
+                "repository": {
+                    "description": "Image repository",
+                    "type": "string"
+                },
+                "tag": {
+                    "description": "Overrides the image tag whose default is the chart appVersion.",
+                    "type": "string"
+                }
+            }
+        },
+        "imagePullSecrets": {
+            "description": "Image pull secrets",
+            "type": "array"
+        },
+        "nameOverride": {
+            "description": "Name override",
+            "type": "string"
+        },
+        "nodeSelector": {
+            "description": "Node selector labels",
+            "type": "object"
+        },
+        "podAnnotations": {
+            "description": "Pod annotations",
+            "type": "object"
+        },
+        "podSecurityContext": {
+            "description": "Pod security context",
+            "type": "object"
+        },
+        "resources": {
+            "description": "Resources",
+            "type": "object",
+            "properties": {
+                "limits": {
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "type": "string"
+                        },
+                        "memory": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "requests": {
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "type": "string"
+                        },
+                        "memory": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "securityContext": {
+            "type": "object",
+            "properties": {
+                "capabilities": {
+                    "description": "Security context capabilities",
+                    "type": "object",
+                    "properties": {
+                        "drop": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "runAsNonRoot": {
+                    "description": "Security context run as non root",
+                    "type": "boolean"
+                }
+            }
+        },
+        "serviceAccount": {
+            "type": "object",
+            "properties": {
+                "annotations": {
+                    "description": "Annotations to add to the service account",
+                    "type": "object"
+                },
+                "create": {
+                    "description": "Specifies whether a service account should be created",
+                    "type": "boolean"
+                },
+                "name": {
+                    "description": "The name of the service account to use. If not set and create is true, a name is generated using the fullname template",
+                    "type": "string"
+                },
+                "token": {
+                    "description": "Creates the token object",
+                    "type": "boolean"
+                }
+            }
+        },
+        "tolerations": {
+            "description": "Tolerations",
+            "type": "array"
+        }
+    }
+}
