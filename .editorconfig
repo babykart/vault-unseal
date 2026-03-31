@@ -14,7 +14,13 @@ indent_style = space
 
 # JSON, JSONNET
 [*.json{,net}]
-indent_size = 2
+indent_size = 4
+indent_style = space
+
+# Justfile
+# https://github.com/casey/just
+[{*.just,justfile}]
+indent_size = 4
 indent_style = space
 
 # YAML
