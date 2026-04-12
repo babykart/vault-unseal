@@ -74,7 +74,7 @@ spec:
       - name: conf
         secret:
           secretName: {{ if .Values.config.existingSecret }}{{ .Values.config.existingSecret }}{{ else }}{{ include "vault-unseal.fullname" . }}-conf{{ end }}
-          defaultMode: 0400
+          defaultMode: 0444
       {{- with .Values.extraVolumes }}
       {{- toYaml . | nindent 6 }}
       {{- end }}
