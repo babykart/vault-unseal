@@ -3,6 +3,27 @@ entries:
   vault-unseal:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2026-04-12T11:25:42.031092311Z"
+    description: A Helm chart for vault-unseal
+    digest: 5e50c675cb581dada527e064584d12cd4600a2fd7ef593bd376026f06c293f0b
+    icon: https://github.com/hashicorp/vault/raw/f22d202cde2018f9455dec755118a9b84586e082/Vault_PrimaryLogo_Black.png
+    keywords:
+    - vault
+    - auto-unseal
+    - notify
+    maintainers:
+    - email: babykart@gmail.com
+      name: babykart
+      url: https://github.com/babykart
+    name: vault-unseal
+    sources:
+    - https://github.com/lrstanley/vault-unseal.git
+    type: application
+    urls:
+    - https://github.com/babykart/vault-unseal/releases/download/vault-unseal-1.0.1/vault-unseal-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2026-04-12T10:44:32.930230946Z"
     description: A Helm chart for vault-unseal
     digest: e98542d03df2a7bfe047afbf566c1b4d003261cd956efbeb83b4abfe4ef1b92c
@@ -148,4 +169,4 @@ entries:
     urls:
     - https://github.com/babykart/vault-unseal/releases/download/vault-unseal-0.7.0/vault-unseal-0.7.0.tgz
     version: 0.7.0
-generated: "2026-04-12T10:44:32.930261043Z"
+generated: "2026-04-12T11:25:42.031130532Z"
