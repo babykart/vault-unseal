@@ -158,9 +158,15 @@
                         }
                     }
                 },
+                "readOnlyRootFilesystem": {
+                    "type": "boolean"
+                },
                 "runAsNonRoot": {
                     "description": "Security context run as non root",
                     "type": "boolean"
+                },
+                "runAsUser": {
+                    "type": "integer"
                 }
             }
         },

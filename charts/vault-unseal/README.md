@@ -1,6 +1,6 @@
 # vault-unseal
 
-![Version: 0.10.1](https://img.shields.io/badge/Version-0.10.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.7.2](https://img.shields.io/badge/AppVersion-0.7.2-informational?style=flat-square)
+![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
 
 A Helm chart for vault-unseal
 
@@ -54,7 +54,7 @@ helm delete vault-unseal
 | affinity | object | `{}` | Affinity |
 | config.annotations | object | `{}` | Config secret annotations |
 | config.existingSecret | string | `""` | If you want to manage the configuration out of the helm chart, specify the name of the secret |
-| config.stringData | string | `"environment: dev\ncheck_interval: 15s\nmax_check_interval: 30m\nvault_nodes:\n  - https://1.2.3.4:8200\nunseal_tokens:\n  - your-token\n  - your-second-token\ntls_skip_verify: false\nemail:\n  enabled: false\n  hostname: smtp.hostname.com\n  port: 25\n  username: your-username\n  password: your-password\n  # address to send from.\n  from_addr: your-alerts@hostname.com\n  # addresses to send to. the first will be the TO, the second and on will be CC'd\n  # onto the message.\n  send_addrs:\n    - your-alert-group@hostname.com\n    - example-user@hostname.com\n  # Skip TLS certificate validation.\n  tls_skip_verify: false\n  # Require TLS for SMTP connections.\n  # The default is opportunistic.\n  mandatory_tls: false\nnotify_max_elapsed: 10m\nnotify_queue_delay: 60s\n"` | Config secret stringData |
+| config.stringData | string | `"environment: dev\ncheck_interval: 15s\nmax_check_interval: 30m\nvault_nodes:\n  - https://1.2.3.4:8200\nunseal_tokens:\n  - your-token\n  - your-second-token\ntls_skip_verify: false\nnotify:\n  max_elapsed: 10m\n  queue_delay: 60s\n  # https://shoutrrr.nickfedor.com/v0.14.3/services/overview/\n  urls:\n    - \"smtp://username:password@host:port/?fromaddress=fromAddress&toaddresses=recipient1\"\n"` | Config secret stringData |
 | containers.env | list | `[]` | Containers environement |
 | deployment.annotations | object | `{}` | Deployment annotations |
 | deployment.labels | object | `{}` | Deployment labels |
@@ -75,7 +75,9 @@ helm delete vault-unseal
 | podSecurityContext | object | `{}` | Pod security context |
 | resources | object | `{"limits":{"cpu":"100m","memory":"32Mi"},"requests":{"cpu":"10m","memory":"8Mi"}}` | Resources |
 | securityContext.capabilities | object | `{"drop":["ALL"]}` | Security context capabilities |
-| securityContext.runAsNonRoot | bool | `false` | Security context run as non root |
+| securityContext.readOnlyRootFilesystem | bool | `true` |  |
+| securityContext.runAsNonRoot | bool | `true` | Security context run as non root |
+| securityContext.runAsUser | int | `1000` |  |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.create | bool | `false` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
