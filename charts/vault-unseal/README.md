@@ -1,6 +1,6 @@
 # vault-unseal
 
-![Version: 1.0.1](https://img.shields.io/badge/Version-1.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
+![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
 
 A Helm chart for vault-unseal
 
@@ -72,7 +72,7 @@ helm delete vault-unseal
 | nameOverride | string | `""` | Name override |
 | nodeSelector | object | `{}` | Node selector labels |
 | podAnnotations | object | `{}` | Pod annotations |
-| podSecurityContext | object | `{}` | Pod security context |
+| podSecurityContext | object | `{"fsGroup":1000}` | Pod security context |
 | resources | object | `{"limits":{"cpu":"100m","memory":"32Mi"},"requests":{"cpu":"10m","memory":"8Mi"}}` | Resources |
 | securityContext.capabilities | object | `{"drop":["ALL"]}` | Security context capabilities |
 | securityContext.readOnlyRootFilesystem | bool | `true` |  |
