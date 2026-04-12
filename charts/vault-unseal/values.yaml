@@ -72,8 +72,8 @@ serviceAccount:
 podAnnotations: {}
 
 # -- Pod security context
-podSecurityContext: {}
-  # fsGroup: 2000
+podSecurityContext:
+  fsGroup: 1000
 
 securityContext:
   # -- Security context capabilities
