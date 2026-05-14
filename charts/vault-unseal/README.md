@@ -1,6 +1,6 @@
 # vault-unseal
 
-![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
+![Version: 1.0.3](https://img.shields.io/badge/Version-1.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
 
 A Helm chart for vault-unseal
 
@@ -79,9 +79,9 @@ helm delete vault-unseal
 | securityContext.runAsNonRoot | bool | `true` | Security context run as non root |
 | securityContext.runAsUser | int | `1000` |  |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
+| serviceAccount.automount | bool | `false` | Automatically mount the service account token |
 | serviceAccount.create | bool | `false` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
-| serviceAccount.token | bool | `false` | Creates the token object |
 | tolerations | list | `[]` | Tolerations |
 
 ----------------------------------------------
